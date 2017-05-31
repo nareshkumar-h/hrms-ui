@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+	<title>Welcome</title>
+
+<link href="bower/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+	
+	<link href="bower/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="theme/css/datatables.min.css" rel="stylesheet">
+
+	<!-- <link href="../bower/plugins/animate.css/animate.min.css" rel="stylesheet"> -->
+	<link href="theme/css/animate.css" rel="stylesheet">
+	<link href="theme/css/style.css" rel="stylesheet">
+	
+	<script src="bower/plugins/angular/angular.min.js"></script>
+	<script src="bower/plugins/angular-route/angular-route.min.js"></script>	
+	<script src="bower/plugins/angular-animate/angular-animate.min.js"></script>
+	<script src="bower/plugins/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="bower/plugins/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	
+	<script>
+	var baseUrl = "http://localhost:5000";
+	//var baseUrl = "http://sample-env-1.vs2gz8ck2n.ap-south-1.elasticbeanstalk.com";
+	</script>
+
+	<script src="admin/app.js"></script>
+	<script src="admin/emscontroller.js"></script>
+	<script src="admin/lmscontroller.js"></script>
+	<script src="admin/skillappcontroller.js"></script>
+
+</head>
+
+<body ng-controller="MainController">
+	<div ng-include="'layout/navbar_layout.html'"></div>
+
+	<div id="wrapper">
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+
+				<div ng-include="'layout/header_layout.html'"></div>
+
+			</div>
+			<div ng-view> </div>
+
+			<div ng-include="'layout/footer.html'"> </div>
+
+		</div>
+	</div>
+
+
+	<!-- Mainly scripts -->
+	<script src="bower/plugins/jquery/jquery.min.js"></script>
+	<script src="bower/plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="bower/plugins/metismenu/metisMenu.min.js"></script>
+	<script src="bower/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+	<script src="theme/js/datatables.min.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="theme/js/inspinia.js"></script>
+	<!-- <script src="../theme/js/plugins/pace/pace.min.js"></script>  -->
+
+	<!-- Page-Level Scripts -->
+
+
+	</script>
+
+</body>
+
+</html>
