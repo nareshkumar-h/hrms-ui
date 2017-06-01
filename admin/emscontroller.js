@@ -146,7 +146,7 @@ myApp.controller("DesignationController" , function($scope, $http ) {
         $http.get(url).then( function(response){
          //   console.log(response);
             var designations = response.data;
-            $scope.designations = designations;          
+            $scope.designations = designations;              
             var deptNames = _.unique( _.pluck(designations,'departmentName'));               
             $scope.deptNames = deptNames;
             console.log(JSON.stringify(deptNames));
