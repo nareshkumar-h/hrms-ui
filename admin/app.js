@@ -50,6 +50,26 @@ myApp.config(function($routeProvider) {
 		templateUrl : "partials/holidays/list.html",
 		controller : "HolidayController"
 	})
+	  .when("/trainers", {
+		templateUrl : "partials/trainers/list.html",
+		controller : "TrainerController"
+	})
+   .when("/trainings", {
+		templateUrl : "partials/trainings/list.html",
+		controller : "TrainingController"
+	})
+	   .when("/colleges", {
+		templateUrl : "partials/colleges/list.html",
+		controller : "CollegeController"
+	})
+	   .when("/batches", {
+		templateUrl : "partials/batches/list.html",
+		controller : "BatchController"
+	})
+	  .when("/studentattendance", {
+		templateUrl : "partials/studentattendance/list.html",
+		controller : "StudentAttendanceController"
+	})
      .when("/employeesdesignations", {
 		templateUrl : "partials/employees/updateDesignations.html",
 		controller : "EmployeeController"
