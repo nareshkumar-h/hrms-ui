@@ -189,3 +189,19 @@ myApp.controller('DepartmentDashboardController' , function($scope,$http ){
     };
 
 });
+myApp.controller('EmployeeHierarchyController' , function($scope,$http ){
+
+     $scope.init = function () {
+        $scope.loadDasboardData();
+    }
+
+    $scope.loadDasboardData = function ( ) {
+        var url = baseUrl + "/employeehierarchy";
+        $http.get(url).then( function(response){
+            console.log(response);
+            $scope.employeehierarchy = response.data;                        
+        });
+
+    };
+
+});
