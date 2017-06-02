@@ -1,4 +1,4 @@
-var myApp=angular.module('myapp',['ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize']);
+var myApp=angular.module('myapp',['ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize','angularUtils.directives.dirPagination']);
 console.log("Angular Loaded");
 myApp.constant('config',{
     baseUrl: "http://localhost:5000"
