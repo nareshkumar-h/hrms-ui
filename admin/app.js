@@ -30,6 +30,10 @@ myApp.config(function ($routeProvider) {
 			templateUrl: "partials/employees/list.html",
 			controller: "EmployeeController"
 		})
+		.when("/employeehierarchy", {
+			templateUrl: "partials/employeehierarchy/list.html",
+			controller: "EmployeeHierarchyController"
+		})
 		.when("/categories", {
 			templateUrl: "partials/categories/list.html",
 			controller: "CategoryController"
@@ -50,9 +54,21 @@ myApp.config(function ($routeProvider) {
 			templateUrl: "partials/leavetypes/list.html",
 			controller: "LeaveTypeController"
 		})
+		.when("/applyleave", {
+			templateUrl: "partials/leave/applyleave.html",
+			controller: "LeaveController"
+		})
+		.when("/leaves", {
+			templateUrl: "partials/leaves/list.html",
+			controller: "LeaveController"
+		})
 		.when("/holidays", {
 			templateUrl: "partials/holidays/list.html",
 			controller: "HolidayController"
+		})
+		.when("/leavestatus", {
+			templateUrl: "partials/leavestatus/list.html",
+			controller: "LeaveStatusController"
 		})
 		.when("/trainers", {
 			templateUrl: "partials/trainers/list.html",
