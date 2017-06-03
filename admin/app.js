@@ -35,6 +35,22 @@ myApp.config(function ($routeProvider) {
 			templateUrl: "partials/employeehierarchy/list.html",
 			controller: "EmployeeHierarchyController"
 		})
+		.when("/tickets", {
+			templateUrl: "partials/tickets/list.html",
+			controller: "TicketController"
+		})
+		.when("/mytickets", {
+			templateUrl: "partials/tickets/mytickets_list.html",
+			controller: "TicketController"
+		})
+		.when("/assignedtickets", {
+			templateUrl: "partials/tickets/assignedtickets_list.html",
+			controller: "TicketController"
+		})
+		.when("/createTicket", {
+			templateUrl: "partials/tickets/add.html",
+			controller: "TicketController"
+		})		
 		.when("/categories", {
 			templateUrl: "partials/categories/list.html",
 			controller: "CategoryController"
