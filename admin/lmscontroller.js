@@ -1,10 +1,10 @@
 myApp.controller('HolidayController' , function($scope,$http ){
 
      $scope.init = function () {
-        $scope.loadDasboardData();
+        $scope.fetchHolidays();
     }
 
-    $scope.loadDasboardData = function ( ) {
+    $scope.fetchHolidays = function ( ) {
         var url = baseUrl + "/holidays";
         $http.get(url).then( function(response){
             console.log(JSON.stringify( response) );
@@ -18,10 +18,10 @@ myApp.controller('HolidayController' , function($scope,$http ){
 myApp.controller('LeaveTypeController' , function($scope,$http ){
 
      $scope.init = function () {
-        $scope.loadDasboardData();
+        $scope.fetchLeaveTypes();
     }
 
-    $scope.loadDasboardData = function ( ) {
+    $scope.fetchLeaveTypes = function ( ) {
         var url = baseUrl + "/leavetypes";
         $http.get(url).then( function(response){
             console.log(JSON.stringify( response) );
@@ -34,10 +34,10 @@ myApp.controller('LeaveTypeController' , function($scope,$http ){
 myApp.controller('LeaveStatusController' , function($scope,$http ){
 
      $scope.init = function () {
-        $scope.loadDasboardData();
+        $scope.fetchLeaveStatus();
     }
 
-    $scope.loadDasboardData = function ( ) {
+    $scope.fetchLeaveStatus = function ( ) {
         var url = baseUrl + "/leavestatus";
         $http.get(url).then( function(response){            
             $scope.leavestatus = response.data;           
@@ -50,17 +50,21 @@ myApp.controller('LeaveStatusController' , function($scope,$http ){
 myApp.controller('LeaveController' , function($scope,$http ){
 
      $scope.init = function () {
-        $scope.leavetypes();
-        $scope.getAllLeaves();
+        $scope.fetchLeaveTypes();
+       // $scope.getAllLeaves();
     }
 
-     $scope.leavetypes = function ( ) {
+     $scope.fetchLeaveTypes = function ( ) {
         var url = baseUrl + "/leavetypes";
         $http.get(url).then( function(response){            
             $scope.leavetypes = response.data;           
         });
 
     };
+
+    $scope.applyLeave = function(){
+        console.log("Apply Leaves:" + JSON.stringify($scope.leave));
+    }
 
     $scope.getAllLeaves = function ( ) {
         var url = baseUrl + "/leaves";

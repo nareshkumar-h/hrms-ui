@@ -1,13 +1,13 @@
-<div ng-controller="LeaveController" ng-init="init()">
+<div ng-controller="UserSkillController" ng-init="init()">
 <div class="row wrapper border-bottom white-bg page-heading" >
     <div class="col-lg-10">
-        <h2>Leaves</h2>
+        <h2>My Skills</h2>
         <ol class="breadcrumb">
             <li>
                 <a href="index.html">Home</a>
             </li>
             <li>
-                <a>Leaves</a>
+                <a>My Skills</a>
             </li>
             <li class="active">
                 <strong>List</strong>
@@ -23,7 +23,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Apply Leave</h5>
+                    <h5>My Skills</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -37,61 +37,55 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <form ng-submit="applyLeave()">
-                        From Date: <input type="date" ng-model="leave.fromDate" required />
-                        <br/>
-                        To Date: <input type="date" ng-model="leave.toDate" required />
-                        <br/>
 
-                        Leave Type: 
-                        <select ng-model="leave.leavetype">
-                            <option ng-repeat="l in leavetypes" ng-value="l.id">{{l.name}}</option>
-                        </select>
-
-                        <button type="submit" > Apply Leave </button>
-
-                    </form>
-                </div>
-            </div>
-        </div></div>
-<div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>My Leave History</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
+                    <div ng-if="userskills.length==0">
+                        <button ng-click="assignSkills()"> Assign Skills </button>
                     </div>
-                </div>                
+
+                    <accordion close-others="true">
+        <div accordion-group class="panel-default" heading="{{categoryName}}" ng-repeat="categoryName in categories">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>Skill</th>
+                    <th>Current Scale</th>
+                    <th>Scale</th>
+                </tr>
+                <tr ng-repeat="u in userskills" ng-if="u.categoryName==categoryName">
+                    <td>{{u.id}}</td>
+                    <td>{{u.skillName}}</td>
+                    <td>{{u.ratingName}}</td>
+                    <td>
+                        <select ng-model="rating" ng-options="' L'+r.scale+'- ' + r.name for r in ratings">
+                        </select>
+                        <button type="button" class="btn btn-info btn-circle" ng-click="updateSkills(u.id, rating.id)"><i class="glyphicon glyphicon-ok"></i></button>
+                    </td>
+
+                </tr>
+            </table>
+
+
+        </div>
+    </accordion>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover dataTables-example">
 
                             <thead>
                                 <tr>
-                                    <th width="5%">Sno</th>                                    
-                                    <th>Start Date </th>   
-                                    <th>End Date </th>      
-                                    <th>Reason </th>
-                                    <th>Status </th>                        
+                                    <th width="5%">Sno</th>
+                                    <th>Category Name </th>
+                                    <th>Skill Name </th>  
+                                    <th>Rating </th>                                  
                                    <!-- <th>Action</th> -->
                                 </tr>
                             </thead>
-                            <tbody>                                
-                                <tr ng-repeat="l in leaves">
-                                    <td>{{$index+1}}</td>                                    
-                                    <td>{{l.startDate}}</td> 
-                                    <td>{{l.enddate}}</td> 
-                                    <td>{{l.reason}}</td> 
-                                    <td>{{l.status}}</td> 
+                            <tbody>       
+                                                         
+                                <tr ng-repeat="c in userskills">
+                                    <td>{{$index+1}}</td>
+                                    <td> {{c.categoryName}} </td>
+                                    <td>{{c.skillName}}</td> 
+                                    <td>{{c.ratingName}}</td> 
                                                                                                                                                      
                                     
                                    <!--  <td class="text-right">

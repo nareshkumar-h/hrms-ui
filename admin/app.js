@@ -43,6 +43,10 @@ myApp.config(function ($routeProvider) {
 			templateUrl: "partials/skills/list.html",
 			controller: "SkillController"
 		})
+		.when("/myskills", {
+			templateUrl: "partials/skills/myskills.html",
+			controller: "UserSkillController"
+		})
 		.when("/userskills", {
 			templateUrl: "partials/skills/update.html",
 			controller:"SkillUpdateController"
@@ -135,7 +139,7 @@ myApp.run(['$rootScope', '$location', '$http',
 				$location.path('/login');
 			}
 			else {
-				// $location.path(current.lastIndexOf("/"));
+				//$location.path(next);
 			}
 		});
 	}]);
