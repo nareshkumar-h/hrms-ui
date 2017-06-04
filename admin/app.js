@@ -1,4 +1,9 @@
-var myApp=angular.module('myapp',['ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize','angularUtils.directives.dirPagination']);
+var myApp=angular.module('myapp',['skillapp','lmsapp','tmsapp', 'emsapp','amsapp','ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize','angularUtils.directives.dirPagination']);
+var emsApp=angular.module('emsapp',['ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize','angularUtils.directives.dirPagination']);
+var lmsApp=angular.module('lmsapp',['ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize','angularUtils.directives.dirPagination']);
+var tmsApp=angular.module('tmsapp',['ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize','angularUtils.directives.dirPagination']);
+var skillApp=angular.module('skillapp',['ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize','angularUtils.directives.dirPagination']);
+var amsApp=angular.module('amsapp',['ui.bootstrap','ngRoute', 'ngAnimate', 'ngSanitize','angularUtils.directives.dirPagination']);
 
 console.log("Angular Loaded");
 myApp.constant('config', {
@@ -14,120 +19,8 @@ myApp.config(function ($routeProvider) {
 			templateUrl: "partials/auth/register.html",
 			controller: "AuthController"
 		})
-		.when("/departments", {
-			templateUrl: "partials/departments/list.html",
-			controller: "DepartmentController"
-		})
-		.when("/designations", {
-			templateUrl: "partials/designations/list.html",
-			controller: "DesignationController"
-		})
-		.when("/myprofile", {
-			templateUrl: "partials/employees/myprofile.html",
-			controller: "EmployeeController"
-
-		})
-		.when("/employees", {
-			templateUrl: "partials/employees/list.html",
-			controller: "EmployeeController"
-		})
-		.when("/employeehierarchy", {
-			templateUrl: "partials/employeehierarchy/list.html",
-			controller: "EmployeeHierarchyController"
-		})
-		.when("/tickets", {
-			templateUrl: "partials/tickets/list.html",
-			controller: "TicketController"
-		})
-		.when("/mytickets", {
-			templateUrl: "partials/tickets/mytickets_list.html",
-			controller: "TicketController"
-		})
-		.when("/assignedtickets", {
-			templateUrl: "partials/tickets/assignedtickets_list.html",
-			controller: "TicketController"
-		})
-		.when("/createTicket", {
-			templateUrl: "partials/tickets/add.html",
-			controller: "TicketController"
-		})		
-		.when("/categories", {
-			templateUrl: "partials/categories/list.html",
-			controller: "CategoryController"
-		})
-		.when("/skills", {
-			templateUrl: "partials/skills/list.html",
-			controller: "SkillController"
-		})
-		.when("/myskills", {
-			templateUrl: "partials/skills/myskills.html",
-			controller: "UserSkillController"
-		})
-		.when("/userskills", {
-			templateUrl: "partials/skills/update.html",
-			controller:"SkillUpdateController"
-		})
-		.when("/ratings", {
-			templateUrl: "partials/ratings/list.html",
-			controller: "RatingController"
-		})
-		.when("/leavetypes", {
-			templateUrl: "partials/leavetypes/list.html",
-			controller: "LeaveTypeController"
-		})
-		.when("/applyleave", {
-			templateUrl: "partials/leave/applyleave.html",
-			controller: "LeaveController"
-		})
-		.when("/leaves", {
-			templateUrl: "partials/leaves/list.html",
-			controller: "LeaveController"
-		})
-		.when("/holidays", {
-			templateUrl: "partials/holidays/list.html",
-			controller: "HolidayController"
-		})
-		.when("/leavestatus", {
-			templateUrl: "partials/leavestatus/list.html",
-			controller: "LeaveStatusController"
-		})
-		.when("/trainers", {
-			templateUrl: "partials/trainers/list.html",
-			controller: "TrainerController"
-		})
-		.when("/trainings", {
-			templateUrl: "partials/trainings/list.html",
-			controller: "TrainingController"
-		})
-		.when("/colleges", {
-			templateUrl: "partials/colleges/list.html",
-			controller: "CollegeController"
-		})
-		.when("/batches", {
-			templateUrl: "partials/batches/list.html",
-			controller: "BatchController"
-		})
-		.when("/studentattendance", {
-			templateUrl: "partials/studentattendance/list.html",
-			controller: "StudentAttendanceController"
-		})
-		.when("/employeesdesignations", {
-			templateUrl: "partials/employees/updateDesignations.html",
-			controller: "EmployeeController"
-		})
-		.when("/employees/resigned", {
-			templateUrl: "partials/employees/resigned_list.html",
-			controller: "EmployeeController"
-		})
-		.when("/employees_dashboard", {
-			templateUrl: "partials/dashboard/employee_dashboard.html",
-			controller: "EmployeeDashboardController"
-		})
-		.when("/departments_dashboard", {
-			templateUrl: "partials/dashboard/department_dashboard.html",
-			controller: "DepartmentDashboardController"
-		}).otherwise({
-			redirectTo: '/employeesdesignations'
+		.otherwise({
+			redirectTo: '/login'
 		});
 });
 

@@ -47,7 +47,6 @@
                                     <th>Description</th>
                                     <th>Category</th>
                                     <th>Status </th>
-                                    <th>Created By </th>
                                     <th>Reviewed By </th>
                                    <!-- <th>Action</th> -->
                                 </tr>
@@ -58,8 +57,9 @@
                                     <td>{{t.summary}}</td>
                                     <td>{{t.description}} </td>
                                     <td>{{t.category}}</td>
-                                    <td>{{t.status}}</td>
-                                    <td>{{t.name}}</td>
+                                    <td>
+                                        <span ng-class="t.status =='In Progress'? 'label label-success':'label label-danger'">{{t.status}}</span>
+                                    </td>
                                     <td>{{t.reviewerName}}</td>
                                                                                                                                                      
                                     
